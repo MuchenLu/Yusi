@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互動交流 - T-SCHOOL</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body class="exchange">
+    <header>
+        <div class="navbar">
+            <a href="/" class="logo">
+                <img src="tschool_灰.png" alt="Tschool Logo">
+            </a>
+            <nav class="menu">
+                <a href="about.html" class="menu-item">關於我們</a>
+                <a href="curriculum.html" class="menu-item">課程特色</a>
+                <a href="admission.html" class="menu-item">入學管道</a>
+                <a href="exchange.html" class="menu-item">互動交流</a>
+            </nav>
+            <div class="more-info">
+                <a href="https://tschool.tp.edu.tw/nss/p/index" target="_blank" class="more-btn">校方官網</a>
+            </div>
+        </div>
+    </header>
+    <div class="message-board">
+        <section class="post-section">
+            <h2>留言板</h2>
+            <div class="post-form">
+                <input type="text" v-model="newMessage.author" placeholder="您的名字" class="name-input">
+                <textarea v-model="newMessage.content" placeholder="分享您的想法..." class="message-input"></textarea>
+                <button @click="submitMessage" class="submit-btn">發布留言</button>
+            </div>
+        </section>
+
+        <section class="messages-section">
+            <div v-for="(message, index) in messages" :key="index" class="message-item">
+                <div class="message-header">
+                    <span class="author">{{ message.author }}</span>
+                    <span class="time">{{ message.time }}</span>
+                </div>
+                <p class="message-content">{{ message.content }}</p>
+                <div class="message-actions">
+                    <button @click="toggleReplyForm(index)" class="reply-btn">回覆</button>
+                    <button @click="addLike(index)" class="like-btn">讚 ({{ message.likes }})</button>
+                    <button @click="deleteMessage(index)" class="delete-btn">刪除</button>
+                </div>
+                
+                <!-- 回覆表單 -->
+                <div v-if="message.showReplyForm" class="reply-form">
+                    <textarea v-model="message.newReply" placeholder="寫下您的回覆..." class="reply-input"></textarea>
+                    <button @click="submitReply(index)" class="submit-reply-btn">發送回覆</button>
+                </div>
+                
+                <!-- 回覆列表 -->
+                <div v-if="message.replies.length > 0" class="replies-section">
+                    <div v-for="(reply, replyIndex) in message.replies" :key="replyIndex" class="reply-item">
+                        <div class="reply-time">{{ reply.time }}</div>
+                        <div class="reply-content">{{ reply.content }}</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

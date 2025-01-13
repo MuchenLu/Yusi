@@ -1,0 +1,752 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+/* Default background for all pages */
+body {
+    font-family: "Noto Sans TC", sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Homepage background */
+body.home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), #00000080), url('臺北市數位實驗高級中學 (6)拷貝.jpg');
+}
+
+/* About page background */
+body.about {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), #00000080), url('臺北市數位實驗高級中學拷貝.jpg');
+}
+
+/* Admission page background */
+body.admission {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), #00000080), url('臺北市數位實驗高級中學 (5)拷貝.jpg');
+}
+
+/* Curriculum page background */
+body.curriculum {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), #00000080), url('臺北市數位實驗高級中學 (2)拷貝.jpg');
+}
+
+/* Exchange page background */
+body.exchange {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), #00000080), url('臺北市數位實驗高級中學 (8)拷貝.jpg');
+}
+
+.navbar {
+    position: fixed;          /* 固定導航欄在視窗頂部 */
+    top: 0;                   /* 確保導航欄貼齊視窗頂部 */
+    width: 100%;             /* 導航欄寬度佔滿整個視窗 */
+    padding: 10px;           /* 減少導航欄內部間距 */
+    display: flex;           /* 使用彈性布局排列子元素 */
+    justify-content: space-between;  /* 子元素之間平均分配空間 */
+    align-items: center;     /* 子元素垂直置中對齊 */
+    background-color: rgba(216, 201, 189, 0.9);  /* 半透明米色背景 */
+    backdrop-filter: blur(10px);  /* 背景模糊效果 */
+    z-index: 100;           /* 確保導航欄顯示在其他元素上方 */
+}
+
+.menu {
+    display: flex;
+}
+
+.menu-item {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    background-image: url('tschool_灰.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 250px;           /* 縮小logo寬度 */
+    height: 50px;           /* 縮小logo高度 */
+    text-indent: -9999px;
+    transition: opacity 0.3s;
+    margin-top: 4px;    
+}
+
+a.logo:hover {
+    opacity: 0.8;
+}
+
+.search-box input {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    width: 200px;
+}
+
+.more-info {
+    display: flex;
+    align-items: center;
+}
+
+.more-btn {
+    padding: 8px 16px;
+    background-color: #4A4A4A;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.more-btn:hover {
+    background-color: #666666;
+}
+
+.news-ticker {
+    position: static;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 40px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: start;
+}
+
+main {
+    padding-top: 120px;
+}
+
+.section {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-height: 85vh;    /* 調整高度比例 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    padding-bottom: 5vh;    /* 增加底部間距 */
+    scroll-snap-align: start;
+}
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(63, 62, 62, 0.243);
+}
+body.about {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), #00000080), url('臺北市數位實驗高級中學拷貝.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100vw;
+    min-height: 100vh;
+    width: 100%;
+}
+.about-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.hero-section {
+    text-align: center;
+    margin: 120px auto 60px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 60px 40px;
+    border-radius: 10px;
+    width: 92%;  /* Increased width for better presentation */
+}
+.hero-section h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+}
+
+.motto h2 {
+    font-size: 36px;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.motto p {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 2em;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+h4 {
+    color: #444;
+    margin-bottom: 10px;
+    font-size: 1.6em;
+}
+
+p {
+    line-height: 1.8;
+    color: #666;
+    font-size: 1.3em;
+}
+.mission, .vision, .features {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.school-difference {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 30px;
+    width: 92%;  /* Reduced width for better focus */
+    margin-left: auto;
+    margin-right: auto;
+}
+.campus-features, .suitable-students {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 30px;
+    width: 92%;  /* Reduced width for better focus */
+    margin-left: auto;
+    margin-right: auto;
+}
+.hero-section{
+    background: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px;
+    border-radius: 10px;
+}
+.vision-grid, .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+.vision-item, .feature-item, .module-item {
+    background: rgba(194, 177, 164, 0.7);
+    padding: 25px;
+    border-radius: 8px;
+    margin: 20px 0;
+    transition: transform 0.3s;
+}
+
+.vision-item:hover, .feature-item:hover, .module-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.course-category {
+    font-size: 12px;
+    color: #444;
+    margin: 25px 0 15px;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    padding-bottom: 10px;
+}
+.modes-content ul {
+    list-style-type: none;
+    padding: 20px;
+}
+
+.modes-content li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.modes-content li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #666;
+}
+.admission-page {
+    background-image: url('臺北市數位實驗高級中學 (5)拷貝.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 100px;
+}
+
+.admission-container {
+    max-width: 800px;
+    margin: 120px auto 40px;
+    padding: 0 20px;
+}
+
+.admission-content {
+    text-align: center;
+}
+
+.admission-box {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 40px;
+    margin-top: 30px;
+}
+
+.admission-header h3 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.admission-details {
+    text-align: left;
+}
+
+.special-admission {
+    margin-bottom: 40px;
+}
+
+.admission-details h4 {
+    font-size: 24px;
+    color: #444;
+    margin: 25px 0 15px;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    padding-bottom: 10px;
+}
+
+.admission-details h5 {
+    font-size: 20px;
+    color: #444;
+    margin: 20px 0 10px;
+    border-left: 4px solid #666;
+    padding-left: 10px;
+}
+
+.admission-details ol {
+    padding-left: 20px;
+}
+
+.admission-details p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    color: #727272;
+}
+
+.admission-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.admission-details li {
+    font-size: 16px;    line-height: 1.8;
+    margin-bottom: 10px;
+    color: #727272;
+}
+
+.hero-section {
+    background: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.hero-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.section-content {
+    margin-top: 30px;
+}
+
+.section-content h3 {
+    font-size: 1.8em;
+    color: #444;
+    margin: 25px 0 15px;
+}
+
+.section-content ol {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.section-content li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.section-content p {
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 15px;
+}
+.menu {
+    display: flex;
+    gap: 30px;
+    margin-right: 30px;
+}
+
+.menu-item {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.menu-item:hover {
+    color: #666;
+}
+.curriculum-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 40px;
+}
+.required-courses,
+.elective-courses,
+.course-modules,
+.learning-modes,
+.grade-differences {
+    background: rgba(255, 255, 255, 0.7);  /* 調高透明度從0.9改為0.7 */
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+/* 加大文字尺寸 */
+.curriculum-page p {
+    font-size: 1.4em;
+    line-height: 1.8;
+}
+.curriculum-page h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+.course-category {
+    background: rgba(216, 199, 185, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+.module-item {
+    background: rgba(216, 199, 185, 0.7);
+    padding: 25px;
+    border-radius: 8px;
+    margin: 20px 0;
+    transition: transform 0.3s;
+}
+
+.module-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.intro-text {
+    margin-bottom: 30px;
+}
+
+.modes-content {
+    margin-top: 20px;
+}
+
+.message-board {
+    max-width: 900px;
+    margin: 120px auto 40px;
+    padding: 0 20px;
+}
+
+.post-section {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.name-input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.message-input {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-height: 120px;
+    font-size: 16px;
+    resize: vertical;
+}
+
+.submit-btn {
+    padding: 12px 24px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    align-self: flex-end;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #555;
+}
+
+.messages-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.message-item {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.author {
+    font-weight: bold;
+    color: #333;
+}
+
+.time {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.message-content {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.message-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.reply-btn, .like-btn {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reply-btn:hover, .like-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.reply-form {
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+
+.reply-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    min-height: 80px;
+}
+
+.submit-reply-btn {
+    padding: 8px 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.replies-section {
+    margin-top: 15px;
+    padding-left: 20px;
+    border-left: 2px solid #ddd;
+}
+
+.reply-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+
+.reply-time {
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.reply-content {
+    color: #333;
+}
+
+.delete-btn {
+    padding: 8px 16px;
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
+}
+
+body.curriculum {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), #00000080), url('臺北市數位實驗高級中學 (2)拷貝.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+body.exchange {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), #00000080), url('臺北市數位實驗高級中學 (8)拷貝.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;    /* Reduced from 20px to 10px */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 9vh;
+}
+.section h2 {
+    font-size: 56px;
+    line-height: 1.4;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #F5F5F5;    /* 淺灰白色 */
+    font-family: 'Noto Serif TC', serif;  /* 更優雅的中文字體 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);  /* 添加陰影提升可讀性 */
+}
+
+.section p {
+    font-size: 24px;
+    line-height: 1.8;
+    color: #E0E0E0;    /* 柔和的灰白色 */
+    font-family: 'Noto Sans TC', sans-serif;  /* 現代感的中文字體 */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.admission-details h5 {
+    font-size: 20px;
+    color: #444;
+    margin: 20px 0 10px;
+    border-left: 4px solid #666;
+    padding-left: 10px;
+}
+
+.admission-details ol {
+    padding-left: 20px;
+}
+
+.admission-details ol ol {
+    margin: 10px 0;
+}
+
+.special-admission,
+.regular-admission {
+    margin-bottom: 40px;
+}
+.admission-content h2 {
+    color: #ffffff;
+    font-size: 45px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+}
+.curriculum-content h2 {
+    color: #ffffff;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+}
+
+.curriculum-box {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 40px;
+    margin-top: 30px;
+}
+
+.curriculum-box h4 {
+    font-size: 24px;
+    color: #444;
+    margin: 25px 0 15px;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    padding-bottom: 10px;
+}
+
+.curriculum-box h5 {
+    font-size: 20px;
+    color: #444;
+    margin: 20px 0 10px;
+    border-left: 4px solid #666;
+    padding-left: 10px;
+}
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.module-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.module-item p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
