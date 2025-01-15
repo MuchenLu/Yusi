@@ -5,22 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>關於我們 - T-SCHOOL</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        function ShowAndHide() {
+            if (window.innerWidth <= 769) {
+                var menu = document.querySelector('.menu');
+                if (menu.style.display === 'none') {
+                    menu.style.display = 'flex';
+                } else {
+                    menu.style.display = 'none';
+                }
+            }
+        }
+
+        function UpdateMenu() {
+            var menu = document.querySelector('.menu');
+            if (window.matchMedia("(min-width: 769px)").matches) {
+            menu.style.display = 'flex';
+            }
+            else {
+                menu.style.display = 'none';
+            }
+        }
+        
+    window.addEventListener("resize", UpdateMenu)
+    </script>
 </head>
 <body class="home">
     <header>
         <div class="navbar">
-            <a href="/" class="logo">
-                <img src="tschool_灰.png" alt="Tschool Logo">
-            </a>
+            <div class = "top_info">
+                <a href="index.html" class="logo">
+                    <img src="tschool_灰.png" alt="Tschool Logo">
+                </a>
+                <div class="hamburger" id = "hamburger" onclick = "ShowAndHide()">
+                    <img src = "./burger.png">
+                </div>
+            </div>
             <nav class="menu">
                 <a href="about.html" class="menu-item">關於我們</a>
                 <a href="curriculum.html" class="menu-item">課程特色</a>
                 <a href="admission.html" class="menu-item">入學管道</a>
                 <a href="exchange.html" class="menu-item">互動交流</a>
-                </nav>
                 <div class="more-info">
                     <a href="https://tschool.tp.edu.tw/nss/p/index" target="_blank" class="more-btn">校方官網</a>
                 </div>
-            </div>
-        </header>
- 
+            </nav>
+        </div>
+    </header>
