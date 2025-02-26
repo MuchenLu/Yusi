@@ -3,18 +3,18 @@ const app = Vue.createApp({
         return {
             messages: JSON.parse(localStorage.getItem('messages')) || [
                 {
-                    author: '王小明',
+                    author: 'Xiao Ming Wang',
                     time: '2024-01-20 14:30',
-                    content: '請問貴校的入學方式有哪些呢？',
+                    content: 'Could you please tell me what the admission methods are for your school?',
                     likes: 5,
                     replies: [],
                     showReplyForm: false,
                     newReply: ''
                 },
                 {
-                    author: '李小華',
+                    author: 'Li Xiao Hua',
                     time: '2024-01-19 16:45',
-                    content: '想了解更多關於課程安排的細節。',
+                    content: 'I would like to know more about the details of the course schedule.',
                     likes: 3,
                     replies: [],
                     showReplyForm: false,

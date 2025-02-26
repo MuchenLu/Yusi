@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>互動交流 - T-SCHOOL</title>
+    <title>Communication - T-SCHOOL</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
@@ -43,23 +43,23 @@
                 </div>
             </div>
             <nav class="menu">
-                <a href="about.html" class="menu-item">關於我們</a>
-                <a href="curriculum.html" class="menu-item">課程特色</a>
-                <a href="admission.html" class="menu-item">入學管道</a>
-                <a href="exchange.html" class="menu-item">互動交流</a>
+                <a href="about.html" class="menu-item">About Us</a>
+                <a href="curriculum.html" class="menu-item">Classes Highlights</a>
+                <a href="admission.html" class="menu-item">Permission Information</a>
+                <a href="exchange.html" class="menu-item">Communication</a>
                 <div class="more-info">
-                    <a href="https://tschool.tp.edu.tw/nss/p/index" target="_blank" class="more-btn">校方官網</a>
+                    <a href="https://tschool.tp.edu.tw/nss/p/index" target="_blank" class="more-btn">Official Website</a>
                 </div>
             </nav>
         </div>
     </header>
     <div class="message-board">
         <section class="post-section">
-            <h2>留言板</h2>
+            <h2>Message Board</h2>
             <div class="post-form">
-                <input type="text" v-model="newMessage.author" placeholder="您的名字" class="name-input">
-                <textarea v-model="newMessage.content" placeholder="分享您的想法..." class="message-input"></textarea>
-                <button @click="submitMessage" class="submit-btn">發布留言</button>
+                <input type="text" v-model="newMessage.author" placeholder="Your name..." class="name-input">
+                <textarea v-model="newMessage.content" placeholder="Share your thoughts..." class="message-input"></textarea>
+                <button @click="submitMessage" class="submit-btn">Post</button>
             </div>
         </section>
 
@@ -71,15 +71,15 @@
                 </div>
                 <p class="message-content">{{ message.content }}</p>
                 <div class="message-actions">
-                    <button @click="toggleReplyForm(index)" class="reply-btn">回覆</button>
-                    <button @click="addLike(index)" class="like-btn">讚 ({{ message.likes }})</button>
-                    <button @click="deleteMessage(index)" class="delete-btn">刪除</button>
+                    <button @click="toggleReplyForm(index)" class="reply-btn">Reply</button>
+                    <button @click="addLike(index)" class="like-btn">Like ({{ message.likes }})</button>
+                    <button @click="deleteMessage(index)" class="delete-btn">Delete</button>
                 </div>
                 
                 <!-- 回覆表單 -->
                 <div v-if="message.showReplyForm" class="reply-form">
-                    <textarea v-model="message.newReply" placeholder="寫下您的回覆..." class="reply-input"></textarea>
-                    <button @click="submitReply(index)" class="submit-reply-btn">發送回覆</button>
+                    <textarea v-model="message.newReply" placeholder="Write down yout reply..." class="reply-input"></textarea>
+                    <button @click="submitReply(index)" class="submit-reply-btn">Send</button>
                 </div>
                 
                 <!-- 回覆列表 -->
